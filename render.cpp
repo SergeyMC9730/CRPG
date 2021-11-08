@@ -1,6 +1,6 @@
-#include "inc/crpg.hpp"
+#include "inc/cworld.hpp"
 
-void crpg::Render::render(crpg::World::World *world){
+void cworld::Render::render(cworld::World::World *world){
     printf("\033[2J\033[1;1H");
 
     unsigned char playerxy = world->player.x * 8 + world->player.y;

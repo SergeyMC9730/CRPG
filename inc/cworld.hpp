@@ -9,7 +9,7 @@
 #include <exception>
 
 #pragma pack(push, 1)
-namespace crpg {
+namespace cworld {
     namespace World {
         struct Enitity {
             unsigned char id = 0;
@@ -48,8 +48,8 @@ namespace crpg {
     };
     namespace Protocol {
         bool h(int istrue);
-        void save(crpg::World::World *world, const char *filename);
-        crpg::World::World *load(const char *filename);
+        void save(cworld::World::World *world, const char *filename);
+        cworld::World::World *load(const char *filename);
 
         namespace Exceptions {
             const char *get_ex(int signum);
@@ -57,7 +57,7 @@ namespace crpg {
         }
     }
     namespace Render {
-        void render(crpg::World::World *world);
+        void render(cworld::World::World *world);
     }
 };
 #pragma pack(pop)

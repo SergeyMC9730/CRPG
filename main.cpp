@@ -1,19 +1,19 @@
-#include "./inc/crpg.hpp"
+#include "./inc/cworld.hpp"
 
-int crpg::Main::main(){
+int cworld::Main::main(){
     return main();
 }
 
 int main(){
     printf("Loading...\n");
 
-    signal(SIGSEGV, crpg::Protocol::Exceptions::make);
+    signal(SIGSEGV, cworld::Protocol::Exceptions::make);
 
     //test
-    crpg::World::World worldtest;
-    crpg::World::genc(0, &worldtest);
-    crpg::World::placeobj(&worldtest, 0, 255, 1, 1);
-    crpg::Protocol::save(&worldtest, "test.dat");
+    cworld::World::World worldtest;
+    cworld::World::genc(0, &worldtest);
+    cworld::World::placeobj(&worldtest, 0, 255, 1, 1);
+    cworld::Protocol::save(&worldtest, "test.dat");
 
-    crpg::Render::render(&worldtest);
+    cworld::Render::render(&worldtest);
 }
