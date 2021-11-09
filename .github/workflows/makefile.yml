@@ -14,19 +14,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: setup deps x86_64
-      run: sudo apt-get update && sudo apt-get install gcc make
-    - name: Make x86_64
-      run: make all && mv cworld cworld-x86_64 && ls
+    - name: setup deps
+      run: make deps
+
+    - name: Make
+      run: make all
     
-    - name: Make aarch64
-      uses: uraimo/run-on-arch-action@v2.1.1
+    - uses: actions/upload-artifact@v2
       with:
-        # CPU architecture: armv6, armv7, aarch64, s390x, ppc64le.
-        arch: aarch64
-        # Linux distribution name: ubuntu16.04, ubuntu18.04, ubuntu20.04, bullseye, buster, stretch, jessie, fedora_latest, alpine_latest, archarm_latest.
-        distro: ubuntu20.04
-        # Shell commands to execute in the container.
-        run: sudo apt-get update && sudo apt-get install gcc make && make all && mv cworld cworld-aarch64 && ls
-    - name: a
-      run: ls
+        name: cworld.zip
+        path: ./cworld.zip
