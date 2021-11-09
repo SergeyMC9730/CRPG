@@ -18,4 +18,4 @@ all:
 deps:
 	sudo apt-get update
 	sudo apt-get upgrade -y
-	sudo apt-get install gcc make gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi --install-suggests -y
+	sudo apt-get install gcc make gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi -y
