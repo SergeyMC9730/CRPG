@@ -14,7 +14,7 @@ all:
 	aarch64-linux-gnu-g++ $(FILES) -o cworld-aarch64-linux
 	x86_64-w64-mingw32-g++ $(FILES) -o cworld-x86_64-win.exe
 
-	zip cworld.zip cworld-x86_64-linux cworld-arm-linux cworld_aarch64-linux cworld-x86_64-win.exe
+	zip cworld.zip cworld-x86_64-linux cworld-arm-linux cworld-aarch64-linux cworld-x86_64-win.exe
 deps:
 	sudo apt-get update
 	sudo apt-get upgrade -y
