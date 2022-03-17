@@ -1,3 +1,7 @@
 .vscode
 *.dat
-cworld
+cworld-x86_64-linux
+cworld-arm-linux
+cworld-aarch64-linux
+cworld-x86_64-win.exe
+cworld.zip
