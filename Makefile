@@ -1,5 +1,5 @@
 FILES=main.cpp protocol.cpp render.cpp world.cpp
-LIBS=-lpthread -static-libgcc -static-libstdc++ -lao
+LIBS=-lpthread
 
 all:
 	g++ $(FILES) $(LIBS) -o cworld-x86_64-linux

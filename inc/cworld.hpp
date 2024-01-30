@@ -2,6 +2,8 @@
 
 //#define DEBUG
 
+// #define ENABLE_SOUND
+
 #include <iostream>
 #include <csignal>
 #include <cstdlib>
@@ -19,7 +21,9 @@
 #include "../mingw-std-threads/mingw.thread.h"
 #endif
 
+#ifdef ENABLE_SOUND
 #include <ao/ao.h>
+#endif
 
 #pragma pack(push, 1)
 namespace cworld {
@@ -105,6 +109,7 @@ namespace cworld {
     };
     namespace Protocol {
         //bits, rate and channels are 32, 44100 and 2 by default
+	#ifdef ENABLE_AUDIO
         typedef struct {
             const char *filename;
             char *buffer;
@@ -118,6 +123,7 @@ namespace cworld {
         } sound_t;
 
         ao_device *play(sound_t sound);
+	#endif
 
         void save(cworld::World::World *world, const char *filename);
         cworld::World::World load(const char *filename);

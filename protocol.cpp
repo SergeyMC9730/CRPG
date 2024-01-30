@@ -38,7 +38,9 @@ void cworld::Protocol::Keyboard::run(cworld::World::World *w){
         key_pressed = getchar();
         if(key_pressed == 3) {
             system("stty cooked");
+            #ifdef ENABLE_AUDIO
             ao_shutdown();
+            #endif
             exit(0);
         }
         switch(key_pressed){
@@ -91,6 +93,8 @@ void cworld::Protocol::Keyboard::run(cworld::World::World *w){
 int cworld::Protocol::Keyboard::get_key_pressed(){
     return key_pressed;
 }
+#ifdef ENABLE_AUDIO
 ao_device *cworld::Protocol::play(sound_t sound) {
     
 }
+#endif

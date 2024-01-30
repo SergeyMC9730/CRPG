@@ -18,7 +18,9 @@ int main(){
     signal(SIGABRT, cworld::Protocol::Exceptions::make);
     signal(6, cworld::Protocol::Exceptions::make);
 
+    #ifdef ENABLE_AUDIO
     ao_initialize();
+    #endif
 
     //test
     cworld::World::World worldtest;
